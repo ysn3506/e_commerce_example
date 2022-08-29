@@ -1,0 +1,32 @@
+@use "variables" ;
+
+@mixin widthAndHeight($width, $height) {
+    width: $width;
+    height: $height;
+
+}
+
+@mixin setFont($fontSize:$fontSize-M, $lineHeight, $fontStyle:normal, $fontWeight,$color, $fontFamily:Open Sans ) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    font-family: $fontFamily;
+    color:$color;
+}
+
+@mixin setBorder($bordeSize:0, $borderType:solid, $borderColor, $borderRadius) {
+
+    border-width: $bordeSize;
+    border-color: $borderColor;
+    border-style: $borderType;
+    border-radius: $borderRadius;
+    ;
+}
+
+
+@mixin justifyItems(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

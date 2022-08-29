@@ -1,0 +1,47 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+
+.header-wrapper {
+    @include mixins.widthAndHeight(100%, 76.24px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: variables.$second-color;
+    .logo {
+        @include mixins.widthAndHeight(141.25px, 40.32px);
+    }
+    .basket{
+        position: absolute;
+        right:0;
+        @include mixins.setFont(14px,18px,normal, 600,variables.$base-color);
+        @include mixins.widthAndHeight(129px, 76.64px);
+        @include mixins.justifyItems();
+        letter-spacing: 0.16px;
+        border:none;
+        margin:auto 104px auto auto;
+        background-color:variables.$active-color;
+        img{
+            @include mixins.widthAndHeight(24px, 24.53px);
+            margin-right:variables.$marginSize-M;
+        }
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .header-wrapper {
+        .logo {
+            @include mixins.widthAndHeight(105.9375px, 30.24px);
+        }
+    }
+}
+
+@media screen and (max-width:425px) {
+    .header-wrapper {
+        height: 60px;
+        .logo {
+            @include mixins.widthAndHeight(70.625px, 20.16px);
+        }
+    }
+}
