@@ -1,0 +1,6 @@
+export const SET_ITEMS = "SET_ITEMS";
+export const SET_TAGS = "SET_TAGS";
+export const SET_COMPANIES = "SET_COMPANIES";
+export const SET_SORTING_PARAMS = "SET_SORTING_PARAMS";
+export const SET_FILTER = "SET_FILTER";
+export const SET_PRODUCT_CATEGORY = "SET_PRODUCT_CATEGORY";
