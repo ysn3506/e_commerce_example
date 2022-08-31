@@ -1,0 +1,13 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
+
+
+.filter-wrapper {
+    @include mixins.widthAndHeight(100%, auto);
+    min-height: 214px;
+
+    .filter-title {
+        @include mixins.setFont(variables.$fontSize-S, 18px, normal, 600, variables.$third-font-color);
+        margin-bottom: variables.$marginSize-L;
+    }
+}
