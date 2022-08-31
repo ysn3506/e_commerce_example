@@ -42,7 +42,7 @@
         text-align: left;
         @include mixins.widthAndHeight(124px, 101px);
         .item-price{
-            @include mixins.setFont(variables.$fontSize-M,20px,normal,400,variables.$second-color,Helvetica);
+            @include mixins.setFont(variables.$fontSize-M,20px,normal,700,variables.$second-color,Helvetica);
             margin: 0;
         }
         .item-title {
