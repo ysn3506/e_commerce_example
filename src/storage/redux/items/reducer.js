@@ -4,8 +4,8 @@ import {
   SET_TAGS,
   SET_FILTER,
   SET_PRODUCT_CATEGORY,
-  SET_CATEGORIES,
   SET_LOADING,
+  SET_SORTING_PARAMS,
 } from "./constants";
 
 const initialState = {
@@ -15,7 +15,8 @@ const initialState = {
   filter: {},
   categories: [],
   productCategory: "mug",
-  loading:false
+  loading: false,
+  sorting: "",
 };
 
 export const itemsReducer = (state = initialState, action) => {
@@ -30,10 +31,10 @@ export const itemsReducer = (state = initialState, action) => {
       return { ...state, filter: action.payload };
     case SET_PRODUCT_CATEGORY:
       return { ...state, productCategory: action.payload };
-    case SET_CATEGORIES:
-      return { ...state, categories: action.payload };
     case SET_LOADING:
       return { ...state, loading: action.payload };
+    case SET_SORTING_PARAMS:
+      return { ...state, sorting: action.payload };
     default:
       return state;
   }

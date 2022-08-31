@@ -5,6 +5,7 @@
 .filter-wrapper {
     @include mixins.widthAndHeight(100%, auto);
     min-height: 214px;
+    text-align: left;
 
     .filter-title {
         @include mixins.setFont(variables.$fontSize-S, 18px, normal, 600, variables.$third-font-color);

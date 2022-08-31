@@ -1,7 +1,7 @@
 
 import { getAllCompanies, getAllTags } from "../../../services/API";
 import { store } from "../../store";
-import { SET_ITEMS, SET_COMPANIES, SET_TAGS ,SET_PRODUCT_CATEGORY, SET_LOADING} from "./constants";
+import { SET_ITEMS, SET_COMPANIES, SET_TAGS ,SET_SORTING_PARAMS, SET_PRODUCT_CATEGORY, SET_LOADING} from "./constants";
 
 const callAction = (type, data) =>
   store.dispatch({ type: type, payload: data });
@@ -63,4 +63,5 @@ export const setLoading = (bool) =>callAction(SET_LOADING, bool)
 
 export const setProductCategory = (data) => callAction(SET_PRODUCT_CATEGORY, data);
    
+export const setSorting = (sort) => callAction(SET_SORTING_PARAMS, sort);
 

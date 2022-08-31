@@ -3,6 +3,7 @@
 
 
 .App {
+  box-sizing: border-box;
   text-align: center;
   padding:0 104px;
   @include mixins.widthAndHeight(auto, auto);
@@ -11,6 +12,7 @@
     padding-top:100px;
     display: grid;
     grid-template-columns: 25% 50% 25%;
+    column-gap: 16px;
     @include mixins.widthAndHeight(100%, calc(100% - 179.24px));
     .main-contents{
           @include mixins.justifyItems();

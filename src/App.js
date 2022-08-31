@@ -7,6 +7,8 @@ import ProductList from './components/product-list';
 import ProductTypeTab from './components/product-tab';
 import { updateProductList } from './utils/helpers';
 import Spinner from './components/spinner';
+import FilterFrame from './components/filter-frame';
+import Sorting from './components/sorting';
 // import { getItems } from './services/API';
 // import { setCompanies, setItems, setTags } from './storage/redux/items/action';
 
@@ -27,10 +29,14 @@ function App() {
     <div className="App">
       <Header />
       <div className="content-wrapper">
-        <div>placeholder</div>
+        <div>
+          <FilterFrame title="Sorting">
+            <Sorting />
+          </FilterFrame>
+        </div>
         <div className="product-modal">
           <ProductTypeTab />
-       {loading ? <Spinner /> : <ProductList />}
+          {loading ? <Spinner /> : <ProductList />}
         </div>
         <div>placeholder</div>
       </div>
