@@ -1,13 +1,12 @@
 
 import { getAllCompanies, getAllTags } from "../../../services/API";
 import { store } from "../../store";
-import { SET_ITEMS, SET_COMPANIES, SET_TAGS ,SET_PRODUCT_CATEGORY} from "./constants";
+import { SET_ITEMS, SET_COMPANIES, SET_TAGS ,SET_PRODUCT_CATEGORY, SET_LOADING} from "./constants";
 
 const callAction = (type, data) =>
   store.dispatch({ type: type, payload: data });
 
 export const setItems = (data) => callAction(SET_ITEMS, data);
-
 
 
 export const setCompanies = () => {
@@ -60,10 +59,8 @@ export const setTags = () => {
 };
 
 
-export const setProductCategory = () => {
-    const currentCategory = store.getState().items.productCategory;
-    const newCategory = currentCategory === "mug" ? "shirt" : "mug";
-    return callAction(SET_PRODUCT_CATEGORY, newCategory);
-    
-}
+export const setLoading = (bool) =>callAction(SET_LOADING, bool)
+
+export const setProductCategory = (data) => callAction(SET_PRODUCT_CATEGORY, data);
+   
 

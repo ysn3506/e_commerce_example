@@ -1,11 +1,21 @@
-import { SET_COMPANIES, SET_ITEMS, SET_TAGS,SET_FILTER ,SET_PRODUCT_CATEGORY} from "./constants";
+import {
+  SET_COMPANIES,
+  SET_ITEMS,
+  SET_TAGS,
+  SET_FILTER,
+  SET_PRODUCT_CATEGORY,
+  SET_CATEGORIES,
+  SET_LOADING,
+} from "./constants";
 
 const initialState = {
   products: [],
   companies: [],
   tags: [],
-    filter: {},
-  productCategory:"mug"
+  filter: {},
+  categories: [],
+  productCategory: "mug",
+  loading:false
 };
 
 export const itemsReducer = (state = initialState, action) => {
@@ -20,6 +30,10 @@ export const itemsReducer = (state = initialState, action) => {
       return { ...state, filter: action.payload };
     case SET_PRODUCT_CATEGORY:
       return { ...state, productCategory: action.payload };
+    case SET_CATEGORIES:
+      return { ...state, categories: action.payload };
+    case SET_LOADING:
+      return { ...state, loading: action.payload };
     default:
       return state;
   }

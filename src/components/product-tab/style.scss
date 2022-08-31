@@ -1,0 +1,33 @@
+@use "../../styles/mixins.scss";
+@use "../../styles//variables.scss";
+
+
+.product-category-wrapper{
+    @include mixins.widthAndHeight(129px, 72px);
+    margin-bottom:variables.$marginSize-XL;
+    .product-header{
+        @include mixins.setFont(variables.$fontSize-XL,26px,normal,400,variables.$second-font-color);
+        margin-bottom:variables.$marginSize-XL;
+        text-align: left;
+    }
+    .button-wrapper{
+        @include mixins.justifyItems();
+        justify-content: flex-start;
+        .category-button{
+            height: 30px; 
+            background: variables.$active-type-font-color;
+            border-radius: 2px;
+            padding:6px 16px;
+            margin-right:variables.$marginSize-M;
+            @include mixins.setFont(variables.$fontSize-S,18px,normal,600,variables.$second-color);
+            border:none;
+        }
+        .category-button.active{
+            background: variables.$second-color;
+            color:variables.$base-color;
+
+        }
+    }
+
+
+}

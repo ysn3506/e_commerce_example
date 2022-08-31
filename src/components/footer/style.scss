@@ -3,9 +3,6 @@
 
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     @include mixins.widthAndHeight(100%, 103px);
     @include mixins.justifyItems();
     @include mixins.setFont(variables.$fontSize-S, 174%, normal, 400, variables.$second-color);

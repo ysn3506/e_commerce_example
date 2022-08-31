@@ -1,29 +1,41 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import './App.scss';
 import Footer from './components/footer';
 import Header from './components/header';
-import { getItems } from './services/API';
-import { setCompanies, setItems, setTags } from './storage/redux/items/action';
+import ProductList from './components/product-list';
+import ProductTypeTab from './components/product-tab';
+import { updateProductList } from './utils/helpers';
+import Spinner from './components/spinner';
+// import { getItems } from './services/API';
+// import { setCompanies, setItems, setTags } from './storage/redux/items/action';
 
 function App() {
+  const selector = useSelector(state => state.items)
+  const { productCategory,loading } = selector;
   useEffect(() => {
-     getItems()
-       .then((resp) => setItems(resp.data))
-       .then(() => {
-         setTags();
-         setCompanies();
-       })
-       .catch((err) => {
-         throw err;
-       });
-  },[])
+    updateProductList();
+  }, [])
+  
+
+  useEffect(() => {
+    updateProductList();
+  }, [productCategory]);
  
 
   return (
     <div className="App">
       <Header />
-      <Footer/>
-   
+      <div className="content-wrapper">
+        <div>placeholder</div>
+        <div className="product-modal">
+          <ProductTypeTab />
+       {loading ? <Spinner /> : <ProductList />}
+        </div>
+        <div>placeholder</div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
