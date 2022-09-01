@@ -20,9 +20,8 @@
             appearance: none;
         }
 
-        input[type="radio"]:checked,
-        .sorting-radio.active {
-            border-color: variables.$second-color;
+        input[type="radio"]:checked,.sorting-radio.active {
+            border-color: variables.$second-color!important;
         }
 
         .sorting-label {

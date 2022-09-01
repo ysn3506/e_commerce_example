@@ -1,8 +1,11 @@
 import API from "./BASE_API";
 import { store } from "../storage/store";
 
-export const getItems = (parameters = "") =>
-    API.get(`/items?itemType=${store.getState().items.productCategory}&${parameters}`);
+export const getItems = (parameters = "") => {
+  const { productCategory, sorting } = store.getState().items;
+  return  API.get(`/items?itemType=${productCategory}&${parameters}&_sort=${sorting.code}`);
+}
+   
   
 
 

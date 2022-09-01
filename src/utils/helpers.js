@@ -7,7 +7,13 @@ import {
 } from "../storage/redux/items/action";
 
 export const categoryList = ["mug", "shirt"];
-export const sortingPreferences=["Price low to high","Price high to low","New to old","Old to new"]
+export const sortingPreferences = [
+    { name: "Price low to high", code: "price&_order=asc" },
+    { name: "Price high to low", code: "price&_order=desc" },
+    { name: "New to old", code: "added&_order=desc" },
+    { name: "Old to new" , code:"added&_order=asc"}
+
+];
 
 export const updateProductList = () =>
   new Promise((resolve, reject) => {

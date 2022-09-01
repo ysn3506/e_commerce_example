@@ -8,6 +8,8 @@ import {
   SET_SORTING_PARAMS,
 } from "./constants";
 
+import { sortingPreferences } from "../../../utils/helpers";
+
 const initialState = {
   products: [],
   companies: [],
@@ -16,7 +18,7 @@ const initialState = {
   categories: [],
   productCategory: "mug",
   loading: false,
-  sorting: "",
+  sorting: sortingPreferences[0],
 };
 
 export const itemsReducer = (state = initialState, action) => {
