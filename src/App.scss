@@ -19,6 +19,10 @@
     }
     .product-modal{
       min-height: 80vh;
+      .pagination-wrapper{
+        @include mixins.justifyItems();
+        margin-top:18px;
+      }
     }
   }
   

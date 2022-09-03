@@ -19,10 +19,10 @@ export const sortingPreferences = [
 
 ];
 
-export const updateProductList = () =>
+export const updateProductList = (page) =>
   new Promise((resolve, reject) => {
     setLoading(true);
-    getItems(createParameterForItems())
+    getItems(createParameterForItems(),page)
         .then((resp) => {
             setItems(resp.data.data);
             setTags(resp.data.tags);

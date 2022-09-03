@@ -10,6 +10,7 @@ import Spinner from './components/spinner';
 import FilterFrame from './components/filter-frame';
 import Sorting from './components/sorting';
 import Filtering from './components/filtering';
+import Pagination from './components/paginate';
 // import { getItems } from './services/API';
 // import { setCompanies, setItems, setTags } from './storage/redux/items/action';
 
@@ -44,6 +45,9 @@ function App() {
         <div className="product-modal">
           <ProductTypeTab />
           {loading ? <Spinner /> : <ProductList />}
+          <div  className='pagination-wrapper'>
+            <Pagination/>
+          </div>
         </div>
         <div>placeholder</div>
       </div>

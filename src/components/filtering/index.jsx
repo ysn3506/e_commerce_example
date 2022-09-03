@@ -5,8 +5,8 @@ import {
   setCompanyFilter,
   setTagFilter,
 } from "../../storage/redux/items/action";
-import checked from "../../assets/icons/check-white.png"
- import { updateProductList } from "../../utils/helpers";
+import checked from "../../assets/icons/check-white.png";
+import { updateProductList } from "../../utils/helpers";
 import "./style.scss";
 
 Filtering.propTypes = {
@@ -18,40 +18,40 @@ function Filtering({ type }) {
   const [checks, setChecks] = useState([]);
   const [searchResult, setSearchResult] = useState("");
   const selector = useSelector((state) => state.items);
-    const {
+  const dispatch = useDispatch();
+  const {
     tags,
     companies,
     totalAmountForCompanies,
-     totalAmountForTags,
+    totalAmountForTags,
     filter: { company, tag },
   } = selector;
-    const dataSource = type === "tag" ? tags : companies;
 
-const totalAmount =
-  type === "tag" ? totalAmountForTags : totalAmountForCompanies;
-  const dispatch = useDispatch();
+  // According to Filter Type The Variables below are initialized.
+  const dataSource = type === "tag" ? tags : companies;
+  const totalAmount =
+    type === "tag" ? totalAmountForTags : totalAmountForCompanies;
   const stateAction = type === "tag" ? setTagFilter : setCompanyFilter;
-    const filterType = type === "tag" ? tag : company;
-      const filterObject = type === "tag" ? "tagName" : "slug";
+  const filterType = type === "tag" ? tag : company;
+  const filterObject = type === "tag" ? "tagName" : "slug";
 
-
-
-  const handleChange = async(e, selected) => {
-      let elementList;
+  const handleChange = async (e, selected) => {
+    let elementList;
     if (e.target.checked) {
-        elementList = [...filters, selected];
-        setFilter(elementList);
-        dispatch(stateAction(elementList));
-        setChecks([...checks, e.target]);
+      elementList = [...filters, selected];
+      setFilter(elementList);
+      dispatch(stateAction(elementList));
+      setChecks([...checks, e.target]);
     } else {
-        elementList = filters.filter((f) => f[filterObject]!== selected[filterObject]);
-        setFilter(elementList);
-        dispatch(stateAction(elementList));
-        setChecks([...checks.filter(el=>el!==e.target)]);
+      elementList = filters.filter(
+        (f) => f[filterObject] !== selected[filterObject]
+      );
+      setFilter(elementList);
+      dispatch(stateAction(elementList));
+      setChecks([...checks.filter((el) => el !== e.target)]);
     }
-   
-      
-     updateProductList();
+
+    updateProductList();
   };
 
   const removeAll = () => {
@@ -62,10 +62,13 @@ const totalAmount =
     updateProductList();
   };
 
-    const data = dataSource.filter((el) => {
-        const id = type === "tag" ? el.tagName : el.name;
-        return id.toLowerCase().includes(searchResult.toLowerCase());
-    }).sort((a, b) => b.amount - a.amount);
+  const data = dataSource
+    .filter((el) => {
+      const id = type === "tag" ? el.tagName : el.name;
+      return id.toLowerCase().includes(searchResult.toLowerCase());
+    })
+    .sort((a, b) => b.amount - a.amount);
+
   return (
     <div className="sorting-wrapper filter">
       <input

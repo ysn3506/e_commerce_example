@@ -1,0 +1,60 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+
+.pagination-container {
+    @include mixins.justifyItems();
+    @include mixins.setFont(variables.$fontSize-M, 18px, normal, 600, variables.$third-font-color);
+    box-sizing: border-box;
+    padding-inline-start: 0;
+
+    .page-classname,
+    .next-button-class,
+    .prev-button-class,
+    .break {
+        list-style-type: none;
+        @include mixins.justifyItems();
+
+    }
+
+    .page-classname {
+        @include mixins.widthAndHeight(32px, 40px)
+    }
+
+    .page-classname.active-page {
+        background-color: variables.$second-color;
+        border-radius: 2px;
+        color: variables.$base-color;
+    }
+
+    .next-button-class,
+    .prev-button-class {
+        color: variables.$second-color;
+    }
+
+    .next-button-class.disabled,
+    .prev-button-class.disabled {
+        color: variables.$third-font-color;
+    }
+
+
+    .arrow-button {
+        @include mixins.justifyItems();
+        margin: auto 57px;
+
+        img {
+            margin: 10px;
+            width: 14px;
+            height: 14px;
+
+        }
+    }
+
+    .arrow-button.right {
+        img {
+            transform: rotate(180deg)
+        }
+    }
+
+
+}
