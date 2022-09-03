@@ -9,7 +9,7 @@ function ProductList() {
 
   return (
     <div className="productlist-wrapper">
-      {products.slice(0, 15).map((item) => (
+      {products.map((item) => (
         <ProductCard key={item.added} item={item} />
       ))}
     </div>

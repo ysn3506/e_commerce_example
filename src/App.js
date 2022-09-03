@@ -9,6 +9,7 @@ import { updateProductList } from './utils/helpers';
 import Spinner from './components/spinner';
 import FilterFrame from './components/filter-frame';
 import Sorting from './components/sorting';
+import Filtering from './components/filtering';
 // import { getItems } from './services/API';
 // import { setCompanies, setItems, setTags } from './storage/redux/items/action';
 
@@ -32,6 +33,12 @@ function App() {
         <div>
           <FilterFrame title="Sorting">
             <Sorting />
+          </FilterFrame>
+          <FilterFrame title="Brands">
+            <Filtering type="brand" />
+          </FilterFrame>
+          <FilterFrame title="Tags">
+            <Filtering type="tag" />
           </FilterFrame>
         </div>
         <div className="product-modal">

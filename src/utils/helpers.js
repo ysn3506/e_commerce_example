@@ -4,7 +4,11 @@ import {
   setTags,
   setCompanies,
   setLoading,
+  setTotalAmountForCompanies,
+    setTotalAmount,
+  setTotalAmountForTags
 } from "../storage/redux/items/action";
+import { store } from "../storage/store";
 
 export const categoryList = ["mug", "shirt"];
 export const sortingPreferences = [
@@ -18,12 +22,16 @@ export const sortingPreferences = [
 export const updateProductList = () =>
   new Promise((resolve, reject) => {
     setLoading(true);
-    getItems()
-      .then((resp) => setItems(resp.data))
-      .then(() => {
-        setTags();
-        setCompanies();
-      })
+    getItems(createParameterForItems())
+        .then((resp) => {
+            setItems(resp.data.data);
+            setTags(resp.data.tags);
+            setCompanies(resp.data.companies);
+            setTotalAmountForCompanies(resp.data.productsAmountsForCompanies);
+            setTotalAmountForTags(resp.data.productsAmountsForTags);
+            setTotalAmount(resp.data.totalItemAmount);
+
+      } )
       .then(() => resolve())
       .catch((err) => {
         reject();
@@ -31,3 +39,30 @@ export const updateProductList = () =>
       })
       .finally(() => setLoading(false));
   });
+
+
+
+
+
+
+
+export const createParameterForItems = () => {
+    const { filter } = store.getState().items;
+    let parameter="";
+    Object.keys(filter).forEach(key => {
+
+        filter[key].forEach((el) => {
+            if (key === "company") {
+                 parameter += `manufacturer=${el?.slug}&`;
+            } else {
+                   parameter += `tags_like=${el?.tagName}&`;
+            }
+    
+        });
+      
+
+    })
+
+    return parameter;
+}
+  

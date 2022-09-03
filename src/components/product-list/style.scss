@@ -10,5 +10,6 @@
     @include mixins.widthAndHeight(100%, auto);
     background: variables.$base-color;
     padding: 20px;
+    min-height: 96vh;
 
 }

@@ -3,15 +3,18 @@
 
 
 .sorting-wrapper {
-    // @include mixins.widthAndHeight(100%, 100%);
+    @include mixins.widthAndHeight(auto, 184px);
+    box-sizing: border-box;
     padding: variables.$marginSize-XXL;
     background-color: variables.$base-color;
+
 
     .radio-button-wrapper {
         margin-bottom: variables.$marginSize-XL;
         @include mixins.justifyItems();
         justify-content: flex-start;
         position: relative;
+        height: 22px;
 
         input[type="radio"].sorting-radio {
             @include mixins.setBorder(2px, solid, #DFDEE2, 17.5px);
@@ -20,24 +23,85 @@
             appearance: none;
         }
 
-        input[type="radio"]:checked,.sorting-radio.active {
-            border-color: variables.$second-color!important;
+        input[type="radio"]:checked,
+        .sorting-radio.active {
+            border-color: variables.$second-color !important;
         }
 
         .sorting-label {
             @include mixins.setFont(variables.$fontSize-M, 18px, normal, 400, variables.$forth-font-color);
             margin-left: 12px;
-
         }
 
         img {
             position: absolute;
             opacity: 1;
             left: 10px;
-            top: 8px;
+            top: 6px;
             width: 12px;
         }
 
     }
 
+}
+
+
+.sorting-wrapper.filter {
+    @include mixins.widthAndHeight(auto, 244px);
+    position: relative;
+
+    .search-box {
+        position: absolute;
+        @include mixins.widthAndHeight(calc(100% - 48px), 48px);
+        @include mixins.setBorder(2px, solid, #E0E0E0, 2px);
+        padding: 12px 16px;
+        @include mixins.setFont(variables.$fontSize-M, 24px, normal, 400, variables.$third-font-color, "Inter");
+        letter-spacing: 0.15px;
+        box-sizing: border-box;
+    }
+
+    .search-box::placeholder {
+        color: variables.$fifth-font-color;
+    }
+
+
+
+    .checkboxes {
+        margin-top: 60px;
+        overflow: scroll;
+        height: calc(100% - 48px);
+
+        .radio-button-wrapper {
+            .sorting-label {
+                margin-left: 0;
+                display: flex;
+                align-items: center;
+                input[type="checkbox"] {
+                    @include mixins.widthAndHeight(22px, 22px);
+                    border: none;
+                    box-shadow: 0px 1px 7px rgba(93, 56, 192, 0.4);
+                    border-radius: 2px;
+                    background-color: variables.$base-color;
+                    appearance: none;
+                    margin-right: 8px;
+                }
+                
+                input[type="checkbox"]:checked {
+                    background-color: variables.$second-color;
+                    color: variables.$base-color;
+                }
+                .amounts{
+                    color:variables.$fifth-font-color;
+                }
+            }
+
+         
+        }
+
+
+        .no-matches {
+            margin: auto;
+            text-align: center;
+        }
+    }
 }

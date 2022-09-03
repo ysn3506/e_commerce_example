@@ -26,7 +26,6 @@ function Sorting() {
               onChange={()=>handleChange(preference)}
             />
             {sort === preference && <img src={checked} />}
-
             <label className="sorting-label" htmlFor={preference.name}>
               {preference.name}
             </label>
