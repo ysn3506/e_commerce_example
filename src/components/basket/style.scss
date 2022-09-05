@@ -1,0 +1,42 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+
+.basket-wrapper{
+    @include mixins.widthAndHeight(100%,100%);
+    max-height: 338.25px;
+    position: relative;
+    @include mixins.setBorder(8px, solid, variables.$second-color, 2px);
+    background-color: variables.$base-color;
+    padding:27px 27px 27px 22px ;
+    box-sizing: border-box;
+    overflow: scroll;
+    p{text-align: center;}
+    .basket-bottom{
+        position: sticky;
+        right: 0;
+        bottom:-26px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include mixins.widthAndHeight(100%, 84.5px);
+        background-color: variables.$base-color;
+        z-index:2;
+        .total-price {
+            @include mixins.widthAndHeight(92px, 51.1px);
+            @include mixins.justifyItems();
+            margin-right: -11px;
+            @include mixins.setBorder(2px, solid, variables.$second-color, 2px);
+            @include mixins.setFont(variables.$fontSize-M, variables.$marginSize-XL, normal, 600, variables.$second-color);
+        
+        
+        }
+
+    }
+   
+}
+
+.basket-wrapper.hidden{
+    height: 0;
+    display: none;
+}

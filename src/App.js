@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import './App.scss';
 import Footer from './components/footer';
 import Header from './components/header';
 import ProductList from './components/product-list';
@@ -11,8 +10,9 @@ import FilterFrame from './components/filter-frame';
 import Sorting from './components/sorting';
 import Filtering from './components/filtering';
 import Pagination from './components/paginate';
-// import { getItems } from './services/API';
-// import { setCompanies, setItems, setTags } from './storage/redux/items/action';
+import Basket from './components/basket';
+import "./App.scss";
+
 
 function App() {
   const selector = useSelector(state => state.items)
@@ -49,7 +49,7 @@ function App() {
             <Pagination/>
           </div>
         </div>
-        <div>placeholder</div>
+        <div className='basket-content'><Basket/></div>
       </div>
 
       <Footer />

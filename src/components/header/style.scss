@@ -27,7 +27,10 @@
 
         img {
             @include mixins.widthAndHeight(24px, 24.53px);
-            margin-right: variables.$marginSize-M;
+     
+        }
+        img.active{
+                margin-right: variables.$marginSize-M;
         }
     }
 }
