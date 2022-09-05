@@ -9,7 +9,7 @@ import "./style.scss";
 
 
 function ProductTypeTab() {
-  const currentType  = useSelector((state) => state.items.productCategory);
+  const currentType  = useSelector((state) => state.items.productCategory); // In order to select product type currentType can be get value from one of these : "mug","shirt"
   const { filterHidden } = useSelector((state) => state.items);
   const changeProductCategory = (e) => {
     setProductCategory(e.target.innerText);

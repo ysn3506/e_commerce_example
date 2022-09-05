@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import './style.scss'
 
 function ProductModal() {
-  const loading = useSelector((state) => state.items.loading);
+  const loading = useSelector((state) => state.items.loading); // loading is exist in order to provide conditional rendering of spinner while data is fetching.
 
   return (
     <div className="product-modal">

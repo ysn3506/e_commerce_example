@@ -5,12 +5,12 @@ import { setSorting } from "../../storage/redux/items/action";
 import { sortingPreferences, updateProductList } from "../../utils/helpers";
 import "./style.scss";
 function Sorting() {
-  const sort = useSelector((state) => state.items.sorting);
+  const sort = useSelector((state) => state.items.sorting); // sorting preference coming from redux state
   const dispatch = useDispatch();
 
     const handleChange = (selected) => {
         dispatch(setSorting(selected));
-        updateProductList();
+        updateProductList(); 
   }
   return (
     <div className="sorting-wrapper">
