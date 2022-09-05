@@ -13,3 +13,27 @@
     min-height: 96vh;
 
 }
+
+@media screen and (min-width:601px)and (max-width:991px) {
+    .productlist-wrapper {
+    margin: auto;
+    grid-template-columns: auto auto auto;
+    }
+
+
+}
+
+@media screen and (max-width:600px) {
+    .productlist-wrapper {
+        grid-template-columns: auto;
+    }
+
+}
+
+
+@media screen and (min-width:601px) and (max-width:768px) {
+    .productlist-wrapper {
+        grid-template-columns: auto auto;
+    }
+
+}

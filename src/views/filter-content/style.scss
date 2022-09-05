@@ -1,0 +1,22 @@
+@media screen and (max-width:768px) {
+
+    .filter-content {
+        position: fixed;
+        z-index: 3;
+        background: #FAFAFA;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: none;
+        padding: 50px 20px;
+        box-shadow: 400px 0 100px rgb(0 0 6 / 75%);
+
+    }
+
+    .filter-content.active {
+        opacity: 1;
+        display: block;
+        width: 50%;
+
+    }
+}

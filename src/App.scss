@@ -11,24 +11,38 @@
   .content-wrapper{
     padding-top:100px;
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 24% 49.35% 24%;
     column-gap: 16px;
     @include mixins.widthAndHeight(100%, calc(100% - 179.24px));
-    .main-contents{
-          @include mixins.justifyItems();
-    }
-    .product-modal{
-      min-height: 80vh;
-      .pagination-wrapper{
-        @include mixins.justifyItems();
-        margin-top:18px;
-      }
-    }
-    .basket-content{
-      width: fit-content;
-    }
   }
   
+}
+
+
+@media screen and (max-width:1439px) {
+  .App{
+      padding:0 30px;
+
+      .content-wrapper{
+            grid-template-columns: 30% 70%;
+           
+      }
+  }
+  
+  
+}
+
+
+@media screen and (max-width:768px) {
+  .App {
+    padding: 0 15px;
+
+    .content-wrapper{
+          grid-template-columns: 100%;
+     
+    }
+  }
+
 }
 
 

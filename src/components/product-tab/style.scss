@@ -10,6 +10,10 @@
         margin-bottom:variables.$marginSize-XL;
         text-align: left;
     }
+
+    .button-wrapper.filtering{
+        display: none;
+    }
     .button-wrapper{
         @include mixins.justifyItems();
         justify-content: flex-start;
@@ -30,4 +34,29 @@
     }
 
 
+}
+
+
+@media screen and (max-width:768px)  {
+    .product-category-wrapper{
+        height: fit-content;
+        .button-wrapper{
+            .category-button{
+                height: 40px;
+                min-width: 50px;
+
+            }
+        }
+        .button-wrapper.filtering{
+                display: flex;
+                position: absolute;
+                right: 10px;
+                z-index: 2;
+        }
+        .button-wrapper.filtering.active{
+
+            z-index: 4;
+        }
+    }
+    
 }

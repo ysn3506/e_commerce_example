@@ -5,10 +5,14 @@ import { calculateBasketTotalCost } from "../../utils/helpers";
 import "./style.scss";
 
 function Basket() {
-  const { basketItems, hidden } = useSelector((state) => state.basket);
+    const { basketItems, hidden } = useSelector((state) => state.basket);
+      const { filterHidden } = useSelector((state) => state.items);
 
   return (
-    <div className={`basket-wrapper ${hidden && "hidden"}`}>
+    <div
+      className={`basket-wrapper ${hidden && "hidden"} ${ filterHidden && "back"
+      } `}
+    >
       {basketItems.length === 0 ? (
         <p>There are no products in your cart yet.</p>
       ) : (

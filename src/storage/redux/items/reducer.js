@@ -10,6 +10,7 @@ import {
   SET_TOTAL_AMOUNT_FOR_COMPANIES,
   SET_TOTAL_AMOUNT_FOR_TAGS,
   SET_TOTAL_ITEM_AMOUNT,
+  TOGGLE_FILTERING,
 } from "./constants";
 
 import { sortingPreferences } from "../../../utils/helpers";
@@ -25,7 +26,8 @@ const initialState = {
   sorting: sortingPreferences[0],
   totalAmountForCompanies: 0,
   totalAmountForTags: 0,
-  totalProductAmount:0
+  totalProductAmount: 0,
+  filterHidden: true,
 };
 
 export const itemsReducer = (state = initialState, action) => {
@@ -52,6 +54,8 @@ export const itemsReducer = (state = initialState, action) => {
       return { ...state, totalAmountForTags: action.payload };
     case SET_TOTAL_ITEM_AMOUNT:
       return { ...state, totalProductAmount: action.payload };
+    case TOGGLE_FILTERING:
+      return { ...state, filterHidden:!state.filterHidden };
 
     default:
       return state;

@@ -11,6 +11,7 @@ import {
   SET_TOTAL_AMOUNT_FOR_COMPANIES,
   SET_TOTAL_AMOUNT_FOR_TAGS,
   SET_TOTAL_ITEM_AMOUNT,
+  TOGGLE_FILTERING,
 } from "./constants";
 
 const callAction = (type, data) =>
@@ -42,3 +43,5 @@ export const setTotalAmountForTags = (data) =>
 export const setCompanyFilter = (data) => callAction(SET_COMPANY_FILTER, data);
 
 export const setTagFilter = (data) => callAction(SET_TAG_FILTER, data);
+
+export const toggleFiltering=()=>callAction(TOGGLE_FILTERING,true)

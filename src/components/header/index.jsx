@@ -16,10 +16,10 @@ function Header() {
       <Container className="header-wrapper">
         <img className="logo" src={logo} alt="logo" />
         <button
-          className="basket"
+          className={`basket  ${basketItems.length>0 && "active"}`}
           onClick={() => dispatch(toggleBasketHidden())}
         >
-          <img src={basket} className={basketItems.length>0 && "active"} />
+          <img src={basket} />
           {basketItems.length> 0 ? calculateBasketTotalCost() : ""}
         </button>
       </Container>

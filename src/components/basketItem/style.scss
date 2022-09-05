@@ -3,6 +3,7 @@
 
 .basket-item{
 @include mixins.justifyItems();
+justify-content: space-around;
 @include mixins.widthAndHeight(100%, auto);
 min-height: 40.88px;
 @include mixins.setFont(variables.$fontSize-M,18px,normal,600,variables.$second-color);
@@ -10,7 +11,7 @@ border-bottom:1.02px solid #F4F4F4;
 padding:16.35px 0 18.39px;
 .item-details{
     text-align: left;
-    width:80%;
+    width:114px;
     span{
         display: block;
     }

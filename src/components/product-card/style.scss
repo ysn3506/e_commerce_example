@@ -60,3 +60,36 @@
         @include mixins.setFont(12px, 20px, normal, 600, variables.$base-color);
     }
 }
+
+
+@media screen and (max-width:991px) {
+    .card-wrapper{
+        margin: auto;
+    }
+
+
+}
+
+
+@media screen and (max-width:768px) {
+    .productlist-wrapper {
+        margin: auto;
+    }
+    .card-wrapper{
+        @include mixins.widthAndHeight(250px, 345px);
+            position: relative;
+            .item-image{
+                @include mixins.widthAndHeight(248px, 248px);
+                img{
+                        @include mixins.widthAndHeight(184px, 184px);
+                }
+            }
+            .item-info{
+                    @include mixins.widthAndHeight(248px, 200px);
+                    .add-button{
+                        height: 40px;
+                    }
+            }
+    }
+
+}
