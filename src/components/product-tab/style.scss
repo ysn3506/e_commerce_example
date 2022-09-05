@@ -56,6 +56,8 @@
         .button-wrapper.filtering.active{
 
             z-index: 4;
+            position: fixed;
+            top: 40px;
         }
     }
     

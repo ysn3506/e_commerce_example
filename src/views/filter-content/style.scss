@@ -4,7 +4,9 @@
         position: fixed;
         z-index: 3;
         background: #FAFAFA;
-        height: 100vh;
+        height: -webkit-fill-available;
+        min-height: 100vh;
+        overflow: scroll;
         top: 0;
         left: 0;
         display: none;
@@ -17,6 +19,7 @@
         opacity: 1;
         display: block;
         width: 50%;
+        min-width: 360px;
 
     }
 }

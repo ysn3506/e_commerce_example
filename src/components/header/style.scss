@@ -31,10 +31,6 @@
         }
       
     }
-
-    // .basket.active{
-    //      margin-right: variables.$marginSize-M;
-    // }
 }
 
 
@@ -50,6 +46,7 @@
 @media screen and (max-width:768px) {
     .header-wrapper {
         position: fixed;
+        width:100vw;
         z-index: 3;
         .logo {
             @include mixins.widthAndHeight(105.9375px, 30.24px);
