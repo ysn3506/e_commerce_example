@@ -55,7 +55,7 @@
 @media screen and (max-width:1439px) {
     .basket-wrapper {
 
-        position: absolute;
+        position: fixed;
         @include mixins.widthAndHeight(296px, 338.25px);
         box-shadow: 16px 16px 20px #1ea4ce;
         right: 50px;
